@@ -15,10 +15,6 @@ public class Musica {
         this.observadores.add(observador);
     }
 
-    public void removerObservador(Observador observador) {
-        this.observadores.remove(observador);
-    }
-
     public void notificarObservadores() {
         for (Observador observador : this.observadores) {
             observador.musicaAdicionada(this);
@@ -29,10 +25,9 @@ public class Musica {
         return this.nome;
     }
 
-    // Método adicionado para definir o nome
     public void setNome(String nome) {
         this.nome = nome;
-        this.notificarObservadores(); // Notifica os observadores quando o nome muda
+        this.notificarObservadores();
     }
 
 }
